@@ -1,0 +1,45 @@
+{
+  "name": "chordpath",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify": "npm run test && npm run build"
+  },
+  "dependencies": {
+    "@tombatossals/chords-db": "^0.5.1",
+    "@tombatossals/react-chords": "^0.2.10",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tonal": "^6.4.3"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.5",
+    "jsdom": "^29.1.1",
+    "typescript": "^6.0.0",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.10"
+  },
+  "dependencyNotes": {
+    "tonal": "Motor de teoría musical: validación de acordes, notas, escalas, tonalidades y transposición.",
+    "@tombatossals/chords-db": "Base externa MIT con digitaciones reales de guitarra; evita mantener una base propia de posiciones.",
+    "@tombatossals/react-chords": "Renderiza en SVG las digitaciones de chords-db de forma nítida y escalable.",
+    "react/react-dom": "Interfaz reactiva y componentizada para web responsive.",
+    "vite/@vitejs/plugin-react": "Servidor de desarrollo y build de producción rápido para React.",
+    "typescript": "Tipado estático y chequeo del código antes del build.",
+    "vitest/testing-library/jsdom": "Pruebas unitarias e integración del motor musical y la interfaz."
+  }
+}

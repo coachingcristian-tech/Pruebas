@@ -17,8 +17,8 @@
   "dependencies": {
     "@tombatossals/chords-db": "^0.5.1",
     "@tombatossals/react-chords": "^0.2.10",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "tonal": "^6.4.3"
   },
   "devDependencies": {

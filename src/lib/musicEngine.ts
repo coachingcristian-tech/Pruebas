@@ -181,9 +181,9 @@ function templatesFor(input: ParsedChordSymbol): Template[] {
 }
 
 function triadsFor(tonic: string, mode: 'major' | 'minor', scaleKind: ScaleKind): string[] {
-  if (mode === 'major') return Key.majorKey(tonic).triads;
+  if (mode === 'major') return [...Key.majorKey(tonic).triads];
   const minor = Key.minorKey(tonic);
-  return scaleKind === 'harmonic-minor' ? minor.harmonic.triads : minor.natural.triads;
+  return scaleKind === 'harmonic-minor' ? [...minor.harmonic.triads] : [...minor.natural.triads];
 }
 
 function scaleInfo(tonic: string, kind: ScaleKind, input: ParsedChordSymbol): ScaleInfo {
@@ -200,9 +200,9 @@ function scaleInfo(tonic: string, kind: ScaleKind, input: ParsedChordSymbol): Sc
 
   return {
     name: scaleName,
-    notes: scale.notes,
-    degrees: DEGREE_LABELS[kind],
-    ...(!alternateScale.empty && alternateScale.notes.length ? { alternate: { name: alternateName, notes: alternateScale.notes } } : {})
+    notes: [...scale.notes],
+    degrees: [...DEGREE_LABELS[kind]],
+    ...(!alternateScale.empty && alternateScale.notes.length ? { alternate: { name: alternateName, notes: [...alternateScale.notes] } } : {})
   };
 }
 

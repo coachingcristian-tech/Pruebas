@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@tombatossals/chords-db": "^0.5.1",
-    "@tombatossals/react-chords": "^0.2.10",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "tonal": "^6.4.3"
@@ -36,7 +35,6 @@
   "dependencyNotes": {
     "tonal": "Motor de teoría musical: validación de acordes, notas, escalas, tonalidades y transposición.",
     "@tombatossals/chords-db": "Base externa MIT con digitaciones reales de guitarra; evita mantener una base propia de posiciones.",
-    "@tombatossals/react-chords": "Renderiza en SVG las digitaciones de chords-db de forma nítida y escalable.",
     "react/react-dom": "Interfaz reactiva y componentizada para web responsive.",
     "vite/@vitejs/plugin-react": "Servidor de desarrollo y build de producción rápido para React.",
     "typescript": "Tipado estático y chequeo del código antes del build.",

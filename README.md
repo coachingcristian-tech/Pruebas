@@ -20,7 +20,7 @@ Aplicación web responsive para convertir un acorde inicial en progresiones toca
 - **Vite**: desarrollo y build de producción rápidos.
 - **Tonal**: librería externa de teoría musical. Se usa para validar acordes, transponer, resolver tonalidades y generar escalas/notas. No se mantiene una base propia de teoría.
 - **@tombatossals/chords-db**: base MIT externa de digitaciones de instrumentos de cuerda. Se utiliza `lib/guitar.json` para las posiciones.
-- **@tombatossals/react-chords**: render SVG de las posiciones provenientes de `chords-db`.
+- **SVG React propio**: render visual de las posiciones provenientes de `chords-db`, sin duplicar la base de datos.
 - **Vitest + Testing Library + jsdom**: pruebas unitarias y de integración.
 
 La justificación resumida de cada dependencia también está declarada en `package.json` dentro de `dependencyNotes`.
@@ -93,7 +93,7 @@ Las plantillas se ordenan por uso extendido en pop, rock, balada, country, soul,
 
 ## Diagramas de guitarra
 
-La fuente de digitaciones es `@tombatossals/chords-db`, no una tabla creada para este proyecto. El render se hace en SVG con `@tombatossals/react-chords`, por lo que se mantiene nítido en pantallas móviles y de alta densidad.
+La fuente de digitaciones es `@tombatossals/chords-db`, no una tabla creada para este proyecto. El render se hace en SVG dentro de la aplicación a partir de los datos de `chords-db`, por lo que se mantiene nítido en pantallas móviles y de alta densidad y evita dependencias incompatibles de renderizado.
 
 Para extensiones sin forma exacta disponible, el adaptador puede usar una forma simplificada relacionada solo cuando existe una reducción clara (`m13 → m7`, `maj13 → maj7`, `13 → 7`). La interfaz marca esas formas como **Forma simplificada**.
 
@@ -151,6 +151,5 @@ La salida queda en `dist/` y puede desplegarse en Vercel como proyecto Vite sin 
 
 - Tonal: MIT — teoría musical en JavaScript/TypeScript.
 - tombatossals/chords-db: MIT — base de acordes para instrumentos de cuerda.
-- tombatossals/react-chords: render de diagramas SVG basado en esa estructura.
 
 Revisar las licencias de dependencias al redistribuir el producto como parte de un paquete comercial.
